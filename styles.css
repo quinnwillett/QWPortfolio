@@ -1,0 +1,296 @@
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #ffffff;
+    color: #1c1c1c;
+}
+
+/* NAVIGATION */
+.nav {
+    background: #fff;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.06);
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.brand span {
+    color: #6a3bff;
+}
+
+.menu a {
+    margin-left: 22px;
+    text-decoration: none;
+    color: #444;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.menu a:hover {
+    color: #6a3bff;
+}
+
+.hero {
+    width: 90%;
+    max-width: 1200px;
+    margin: 80px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    max-width: 480px;
+}
+
+.intro {
+    letter-spacing: 2px;
+    font-size: 13px;
+    color: #777;
+}
+
+.title {
+    font-size: 48px;
+    margin-top: 12px;
+    font-weight: 700;
+}
+
+.highlight {
+    color: #6a3bff;
+}
+
+.tagline {
+    margin: 10px 0 25px;
+    color: #555;
+    font-size: 16px;
+}
+
+.cta {
+    padding: 12px 32px;
+    background: linear-gradient(135deg, #6a3bff, #cf3bff);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(106,59,255,0.3);
+    transition: 0.2s;
+}
+
+.cta:hover {
+    transform: translateY(-3px);
+}
+
+.stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.stat-box {
+    padding: 16px 25px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.stat-box h3 {
+    font-size: 22px;
+    color: #6a3bff;
+}
+
+.stat-box p {
+    color: #777;
+    font-size: 13px;
+}
+
+/* VISUAL SECTION */
+.hero-visual {
+    position: relative;
+}
+
+.shape {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    background: linear-gradient(145deg, #6a3bff, #cf3bff);
+    border-radius: 60% 90% 50% 90%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(0px);
+}
+
+
+
+.quinn-img {
+    width: 250px;
+    height: auto;
+    display: block;
+    border-radius: 60% 90% 60% 90%;
+    position: relative;
+    margin-top: 25%;
+    margin-left: 20%;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column-reverse;
+    }
+  }
+
+  /* Specific to Contact */
+
+.contactform form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* 2 equal columns */
+    gap: 15px;
+    width: 100%;
+    max-width: 500px;
+    
+}
+
+.contact {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;              /* allows centering horizontally */
+    margin: 200px auto;    /* moves it down + centers horizontally */
+    
+    width: 700px;
+    height: 500px;
+
+    display: flex;         /* THIS is what was missing */
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(145deg, #6a3bff, #cf3bff);
+    z-index: -1;
+}
+
+.contactform input,
+.contactform textarea,
+.contactform button {
+    padding: 15px 18px;     
+    font-size: 18px;        
+    border-radius: 10px; 
+    width: 100%;
+}
+
+.contactform textarea {
+    grid-column: 1 / 3; 
+    min-height: 140px;
+}
+
+.contactform button {
+    grid-column: 1 / 3; 
+}
+
+.nav-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 18px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contact-title {
+    font-size: 48px;
+    margin-top: 30px;
+    font-weight: 700;
+    justify-self: center;
+}
+
+.social-tab {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 50px;                 /* collapsed width */
+    background: #6a3bff;
+    border-radius: 0 12px 12px 0;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    z-index: 999;
+    color: white;
+}
+
+
+/* Expanded state */
+.social-tab.open {
+    width: 200px;
+}
+
+/* The clickable label */
+.tab-label {
+    background: #6a3bff;
+    padding: 14px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    writing-mode: vertical-rl;   /* MAKE IT VERTICAL */
+    text-orientation: upright;   /* Keep letters facing right-side-up */
+    letter-spacing: 3px;
+    white-space: nowrap;
+}
+
+
+/* Social link section (hidden by default) */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 14px;
+
+    /* Hide when collapsed */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: opacity 0.25s ease, max-height 0.25s ease;
+}
+
+/* When expanded, show icons */
+.social-tab.open .social-links {
+    max-height: 500px;  /* enough for icons */
+    opacity: 1;
+}
+
+/* Icon styling */
+.social-links a {
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #6a3bff;
+    transition: 0.2s;
+}
+
+.social-links a:hover {
+    background: #e8dafe;
+}
