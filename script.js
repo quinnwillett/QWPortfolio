@@ -34,3 +34,33 @@ label.addEventListener("click", () => {
     tab.classList.toggle("open");
 });
 
+const track = document.querySelector(".carousel-track");
+const slides = document.querySelectorAll(".slide");
+const captionElement = document.getElementById("carousel-caption");
+
+let index = 0;
+
+// Your custom captions
+const captions = [
+  "Caption for image 1",
+  "Caption for image 2",
+  "Caption for image 3"
+];
+
+function updateSlide() {
+  track.style.transform = `translateX(${-index * 100}%)`;
+  captionElement.textContent = captions[index];  // update caption
+}
+
+document.querySelector(".next").addEventListener("click", () => {
+  index = (index + 1) % slides.length;
+  updateSlide();
+});
+
+document.querySelector(".prev").addEventListener("click", () => {
+  index = (index - 1 + slides.length) % slides.length;
+  updateSlide();
+});
+
+// Initialize starting caption
+updateSlide();
