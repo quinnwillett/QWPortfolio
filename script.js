@@ -34,33 +34,37 @@ label.addEventListener("click", () => {
     tab.classList.toggle("open");
 });
 
-const track = document.querySelector(".carousel-track");
-const slides = document.querySelectorAll(".slide");
-const captionElement = document.getElementById("carousel-caption");
-
+// ------------------
+// CAROUSEL
+// ------------------
 let index = 0;
+const carousel = document.getElementById("carousel");
+const items = document.querySelectorAll(".carousel-item");
 
-// Your custom captions
-const captions = [
-  "Caption for image 1",
-  "Caption for image 2",
-  "Caption for image 3"
-];
+document.getElementById("prevBtn").onclick = () => {
+    index = (index <= 0) ? items.length - 1 : index - 1;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+};
 
-function updateSlide() {
-  track.style.transform = `translateX(${-index * 100}%)`;
-  captionElement.textContent = captions[index];  // update caption
-}
+document.getElementById("nextBtn").onclick = () => {
+    index = (index >= items.length - 1) ? 0 : index + 1;
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+};
 
-document.querySelector(".next").addEventListener("click", () => {
-  index = (index + 1) % slides.length;
-  updateSlide();
+
+// ------------------
+// MEDIA TABS
+// ------------------
+const tabButtons = document.querySelectorAll(".tab-btn");
+const tabPanels = document.querySelectorAll(".tab-panel");
+
+tabButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        document.querySelector(".tab-btn.active").classList.remove("active");
+        btn.classList.add("active");
+
+        document.querySelector(".tab-panel.active").classList.remove("active");
+        document.getElementById(btn.dataset.tab).classList.add("active");
+    });
 });
-
-document.querySelector(".prev").addEventListener("click", () => {
-  index = (index - 1 + slides.length) % slides.length;
-  updateSlide();
-});
-
-// Initialize starting caption
-updateSlide();
