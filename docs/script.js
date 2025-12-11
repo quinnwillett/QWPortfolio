@@ -27,23 +27,6 @@ function updateAliveCounter() {
 setInterval(updateAliveCounter, 1000);
 updateAliveCounter();
 
-
- 
- 
- 
-const tab = document.getElementById("socialTab");
-const label = document.getElementById("tabLabel");
-
-if (label && tab) {
-    label.addEventListener("click", () => {
-        tab.classList.toggle("open");
-    });
-}
-
-
- 
- 
- 
 const tabButtons = document.querySelectorAll(".tab-btn");
 const tabPanels = document.querySelectorAll(".tab-panel");
 
